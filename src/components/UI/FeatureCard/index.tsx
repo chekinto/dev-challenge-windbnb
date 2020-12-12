@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import {
   StyledFeatureCard,
   ImageWrapper,
@@ -9,22 +9,33 @@ import {
 import { Pill } from 'components'
 import { ReactComponent as Star } from 'assets/icon-star.svg'
 
-export const FeatureCard = () => {
+interface IFeatureCard {
+  image: string;
+  superHost: boolean;
+  info: string;
+  rating: number;
+  description: string;
+}
+
+export const FeatureCard: FunctionComponent<IFeatureCard> = ({
+  image, superHost, info, rating, description }) => {
   return (
     <StyledFeatureCard>
       <ImageWrapper>
-        <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="" />
+        <img src={image} alt={description} />
       </ImageWrapper>
+
       <TextWrapper>
         <TextInfo>
-          <Pill className="pill">SUPER HOST</Pill>
-          <p className="beds">Entire apartment . 2 beds</p>
+          {superHost && <Pill className="pill">SUPER HOST</Pill>}
+          <p className="info">{info}</p>
           <div className="rating__container">
             <Star className="star" />
-            <span className="rating">4.40</span>
+            <span className="rating">{rating.toFixed(2)}</span>
           </div>
         </TextInfo>
         <TextDescription>
+          <p>{description}</p>
         </TextDescription>
       </TextWrapper>
     </StyledFeatureCard>

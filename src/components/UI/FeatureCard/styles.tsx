@@ -1,20 +1,21 @@
 import styled from 'styled-components/macro';
 
 export const StyledFeatureCard = styled.article`
-  max-width: 395px;
+  height: auto;
 `;
 
 export const ImageWrapper = styled.div`
-  img {
     border-radius: 24px;
+    overflow: hidden;
+  img {
     max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 `
 
 export const TextWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  overflow: hidden;
 `;
 
 export const TextInfo = styled.div`
@@ -24,7 +25,7 @@ export const TextInfo = styled.div`
   .pill {
     margin-right: 10px;
   }
-  .beds {
+  .info {
     color: var(--grey2);
     font-size: 14px;
     font-weight: 500;
@@ -33,6 +34,7 @@ export const TextInfo = styled.div`
   .rating__container {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     margin-left: auto;
     .star {
       width: 24px;
@@ -48,4 +50,10 @@ export const TextInfo = styled.div`
   }
 `;
 
-export const TextDescription = styled.div``;
+export const TextDescription = styled.div`
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+`;

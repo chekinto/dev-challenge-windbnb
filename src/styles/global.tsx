@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    --white: #FFF;
     --grey1: #4F4F4F;
     --grey2: #828282;
   }
