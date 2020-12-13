@@ -7,6 +7,7 @@ export const StyledFeatureCard = styled.article`
 export const ImageWrapper = styled.div`
     border-radius: 24px;
     overflow: hidden;
+    margin-bottom: 16px;
   img {
     max-width: 100%;
     height: auto;
@@ -22,6 +23,7 @@ export const TextInfo = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 16px;
   .pill {
     margin-right: 10px;
   }
@@ -42,7 +44,7 @@ export const TextInfo = styled.div`
       fill: red;
     }
     .rating {
-      color: var(--grey1);
+      color: var(--grey3);
       font-size: 14px;
       line-height: 22px;
       margin-left: 8px;

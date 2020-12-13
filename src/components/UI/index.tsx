@@ -1,2 +1,5 @@
+export * from './Button'
 export * from './FeatureCard'
+export * from './SearchBar'
+export * from './Input'
 export * from './Pill'

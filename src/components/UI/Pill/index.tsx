@@ -4,7 +4,7 @@ export const Pill = styled.div`
   display: grid;
   place-items: center;
   text-align: center;
-  border: 1px solid var(--grey1);
+  border: 1px solid var(--grey3);
   border-radius: 25px;
   text-align: center;
   width: 100px;
