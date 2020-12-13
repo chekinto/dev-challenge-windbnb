@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Container, FeatureCard, FilterBar, Flex, Grid, Header } from 'components'
 import { GlobalStyles } from 'styles/global'
 import STAYS from 'data/stays.json'
@@ -6,6 +6,9 @@ import 'normalize.css'
 
 const App: FunctionComponent = (): JSX.Element => {
   const [data, setData] = useState(STAYS);
+  const [results, setResults] = useState([])
+  const [term, setTerm] = useState('')
+
 
   return (
     <>

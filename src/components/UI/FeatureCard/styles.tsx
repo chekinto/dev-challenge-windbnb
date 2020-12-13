@@ -12,7 +12,7 @@ export const ImageWrapper = styled.div<{ bgImg: string }>`
   background-repeat: no-repeat;
   height: 270px;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 `
 
 export const TextWrapper = styled.div`

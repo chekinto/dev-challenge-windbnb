@@ -5,7 +5,7 @@ import { SearchBar } from 'components'
 const StyledFilterBar = styled.div`
   background-color: var(--white);
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-  padding: 93px 96px 0;
+  padding: 93px 96px 32px;
   position: fixed;
   top: 0;
   left: 0;

@@ -9,6 +9,9 @@ export const StyledSearchBar = styled.div`
   .dropdown__location, .dropdown__guest {
     border-right: 1px solid var(--grey1);
   }
+  &:focus {
+    border: 4px solid green;
+  }
 `;
 
 export const LocationWrapper = styled.div`
