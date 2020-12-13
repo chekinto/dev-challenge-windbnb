@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useState, useEffect, useRef, SyntheticEvent } from 'react'
-import { Button, Flex, Input } from 'components'
+import React, { FunctionComponent, useState } from 'react'
+import { Button, Input } from 'components'
 import {
-  GuestDropdown,
-  GuestDropdownWrapper,
-  GuestWrapper,
+  // GuestDropdown,
+  // GuestDropdownWrapper,
+  // GuestWrapper,
   LocationDropdownWrapper,
   LocationWrapper,
   StyledSearchBar
@@ -14,60 +14,32 @@ interface ISearchBar {
   children?: React.ReactNode;
 }
 
-interface ITerm {
-  name: string;
-  amount: number;
-}
 
-export const SearchBar: FunctionComponent<ISearchBar> = () => {
-  const [adultCount, setAdultCount] = useState<number>(0);
-  const [childrenCount, setChildrenCount] = useState<number>(0);
-  const [term, setTerm] = useState<ITerm>({
-    name: '',
-    amount: 0
-  })
-  const searchRef = useRef<HTMLDivElement | null>(null);
+export const SearchBar: FunctionComponent<ISearchBar> = (): JSX.Element => {
 
-  const incrementAdult = () => {
-    setAdultCount(prevCount => prevCount + 1)
-  }
-  const decrementAdult = () => {
-    setAdultCount(prevCount => prevCount - 1)
-  }
-  const incrementChildren = () => {
-    setChildrenCount(prevCount => prevCount + 1)
-  }
-  const decrementChildren = () => {
-    setChildrenCount(prevCount => prevCount - 1)
-  }
-
-  const handleSubmit = (e: SyntheticEvent) => {
-    e.preventDefault()
-    console.log(term);
-  }
-
-  useEffect(() => {
-    if (searchRef.current) {
-      const test = searchRef.current.getBoundingClientRect();
-      console.log('test :>> ', test);
-    }
-  }, [])
 
   return (
     <StyledSearchBar>
-      <form onSubmit={handleSubmit}>
-        <LocationWrapper>
-          <Input className="dropdown__location" type="text" placeholder="Location" />
-          <LocationDropdownWrapper>
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-            </ul>
-          </LocationDropdownWrapper>
-        </LocationWrapper>
+      <LocationWrapper>
+        <Input
+          className="dropdown__location"
+          type="text"
+          placeholder="Location"
+          value=""
+          onChange={() => console.log('sljso')}
+        />
+        <LocationDropdownWrapper>
+        </LocationDropdownWrapper>
+      </LocationWrapper>
 
-        <GuestWrapper>
-          <Input className="dropdown__guest" type="text" placeholder="Add guests" tabindex="-1" />
+      {/* <GuestWrapper>
+          <Input
+            className="dropdown__guest"
+            type="text"
+            placeholder="Add guests"
+            value={guests}
+            onChange={(e): void => setGuests(parseInt(e.target.value))}
+          />
           <GuestDropdownWrapper ref={searchRef}>
             <GuestDropdown>
               <h4>Adults</h4>
@@ -88,11 +60,10 @@ export const SearchBar: FunctionComponent<ISearchBar> = () => {
               </Flex>
             </GuestDropdown>
           </GuestDropdownWrapper>
-        </GuestWrapper>
+        </GuestWrapper> */}
 
 
-        <Button className="dropdown__btn" icon src={searchIcon} handleClick={() => alert('clicked')}>Search</Button>
-      </form>
+      <Button className="dropdown__btn" icon src={searchIcon} onClick={() => console.log('button clicked')}>Search</Button>
     </StyledSearchBar >
   )
 }

@@ -21,9 +21,7 @@ export const FeatureCard: FunctionComponent<IFeatureCard> = ({
   image, superHost, info, rating, description }) => {
   return (
     <StyledFeatureCard>
-      <ImageWrapper>
-        <img src={image} alt={description} />
-      </ImageWrapper>
+      <ImageWrapper bgImg={image} />
 
       <TextWrapper>
         <TextInfo>

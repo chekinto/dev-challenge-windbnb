@@ -4,15 +4,15 @@ export const StyledFeatureCard = styled.article`
   height: auto;
 `;
 
-export const ImageWrapper = styled.div`
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 16px;
-  img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+export const ImageWrapper = styled.div<{ bgImg: string }>`
+  border-radius: 24px;
+  background-image: url(${props => props.bgImg});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 270px;
+  width: 100%;
+  margin-bottom: 32px;
 `
 
 export const TextWrapper = styled.div`

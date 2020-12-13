@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, SyntheticEvent } from 'react'
 import styled from 'styled-components/macro';
 
 const StyledButton = styled.button`
@@ -26,13 +26,12 @@ interface IButton {
   icon?: boolean;
   src?: string;
   className?: string;
-  handleClick?: () => void;
-  onClick?: () => void;
+  onClick?: (e: SyntheticEvent) => void;
 }
 
-export const Button: FunctionComponent<IButton> = ({ children, icon, src, className, handleClick }) => {
+export const Button: FunctionComponent<IButton> = ({ children, icon, src, className, onClick }) => {
   return (
-    <StyledButton className={className} onClick={handleClick}>
+    <StyledButton className={className}>
       {icon && <img className="btn__icon" src={src} alt="button icon" />}
       {children}
     </StyledButton>

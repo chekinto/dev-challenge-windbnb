@@ -14,13 +14,21 @@ const StyledInput = styled.input`
 interface IInput {
   type?: string;
   className?: string;
-  onFocus?: (e: any) => void;
   placeholder?: string;
-  tabindex?: string;
+  value?: string | number;
+  onFocus?: (e: any) => void;
+  onChange: (e: any) => void;
 }
 
-export const Input: FunctionComponent<IInput> = ({ type = 'text', placeholder, className }) => {
+export const Input: FunctionComponent<IInput> = ({ type = 'text', placeholder, className, value, onFocus, onChange }) => {
   return (
-    <StyledInput placeholder={placeholder} type={type} className={className} />
+    <StyledInput
+      className={className}
+      type={type}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+      onFocus={onFocus}
+    />
   )
 }
