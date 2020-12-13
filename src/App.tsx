@@ -1,15 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import 'normalize.css'
 import { GlobalStyles } from 'styles/global'
-import { Container, FeatureCard, FilterDraw, Flex, Grid, Header } from 'components'
-import data from 'data/stays.json'
+import { Container, FeatureCard, FilterBar, Flex, Grid, Header } from 'components'
+import STAYS from 'data/stays.json'
 
 const App: FunctionComponent = (): JSX.Element => {
+  const [data, setData] = useState(STAYS);
+
   return (
     <>
       <GlobalStyles />
       <Header />
-      <FilterDraw />
+      <FilterBar />
       <Container>
         <Flex justify="space-between" style={{ marginBottom: 32 }}>
           <h2>Stays in Finland</h2>

@@ -1,5 +1,5 @@
 export * from './Container'
-export * from './FilterDraw'
+export * from './FilterBar'
 export * from './Flex'
 export * from './Grid'
 export * from './Header'
