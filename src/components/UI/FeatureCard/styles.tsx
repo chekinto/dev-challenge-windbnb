@@ -4,7 +4,7 @@ export const StyledFeatureCard = styled.article`
   height: auto;
 `;
 
-export const ImageWrapper = styled.div<{ bgImg: string }>`
+export const ImageWrapper = styled.div<{ bgImg?: string }>`
   border-radius: 24px;
   background-image: url(${props => props.bgImg});
   background-size: cover;

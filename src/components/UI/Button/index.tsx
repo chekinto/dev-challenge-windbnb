@@ -10,7 +10,9 @@ const StyledButton = styled.button`
   height: 58px;
   transition: filter 0.2s ease-in-out;
   cursor: pointer;
+  position: relative;
   .btn__icon {
+    display: inline-block;
     height: 16px;
     width: 16px;
     margin-right: 8px;
@@ -27,12 +29,14 @@ interface IButton {
   src?: string;
   className?: string;
   onClick?: (e: SyntheticEvent) => void;
+  alt?: string;
+  type: string;
 }
 
-export const Button: FunctionComponent<IButton> = ({ children, icon, src, className, onClick }) => {
+export const Button: FunctionComponent<IButton> = ({ children, icon, src, className, onClick, alt }) => {
   return (
     <StyledButton className={className}>
-      {icon && <img className="btn__icon" src={src} alt="button icon" />}
+      {icon && <img className="btn__icon" src={src} alt={alt} />}
       {children}
     </StyledButton>
   )

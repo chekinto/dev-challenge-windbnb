@@ -16,8 +16,11 @@ interface IInput {
   className?: string;
   placeholder?: string;
   value?: string | number;
-  onFocus?: (e: any) => void;
-  onChange: (e: any) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  onChange?: (e: any) => void;
+  onClick?: () => void;
+  name?: string;
 }
 
 export const Input: FunctionComponent<IInput> = ({ type = 'text', placeholder, className, value, onFocus, onChange }) => {

@@ -10,11 +10,11 @@ import { Pill } from 'components'
 import { ReactComponent as Star } from 'assets/icon-star.svg'
 
 interface IFeatureCard {
-  image: string;
-  superHost: boolean;
-  info: string;
+  image?: string;
+  superHost?: boolean;
+  info?: string;
   rating: number;
-  description: string;
+  description?: string;
 }
 
 export const FeatureCard: FunctionComponent<IFeatureCard> = ({
@@ -22,14 +22,13 @@ export const FeatureCard: FunctionComponent<IFeatureCard> = ({
   return (
     <StyledFeatureCard>
       <ImageWrapper bgImg={image} />
-
       <TextWrapper>
         <TextInfo>
           {superHost && <Pill className="pill">SUPER HOST</Pill>}
           <p className="info">{info}</p>
           <div className="rating__container">
             <Star className="star" />
-            <span className="rating">{rating.toFixed(2)}</span>
+            <span className="rating">{rating?.toFixed(2)}</span>
           </div>
         </TextInfo>
         <TextDescription>

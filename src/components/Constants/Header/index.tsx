@@ -1,24 +1,42 @@
-import React from 'react'
-import styled from 'styled-components/macro';
+import React, { FunctionComponent } from 'react'
+import {
+  StyledHeader,
+  HeaderInner,
+  SearchBtn
+} from './styles'
 import { Container } from 'components'
 import logo from 'assets/logo.svg'
-const StyledHeader = styled.header`
-  margin-bottom: 85px;
-`;
+import searchIcon from 'assets/icon-search.svg'
 
-const HeaderInner = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 48px;
-`;
+interface IHeader {
+  isFilterOpen: boolean;
+  setIsFilterOpen: (arg: boolean) => void;
+  totalGuests: number;
+  filteredPlaces: any;
+}
 
-export const Header = () => {
+export const Header: FunctionComponent<IHeader> = ({ isFilterOpen, setIsFilterOpen, filteredPlaces, totalGuests }) => {
+  console.log('filteredPlaces Header:>> ', filteredPlaces);
   return (
     <StyledHeader>
       <Container>
         <HeaderInner>
           <img src={logo} alt="windbnb logo" />
+          <SearchBtn onClick={() => setIsFilterOpen(!isFilterOpen)}>
+            <div className="location">
+              <span>{`${filteredPlaces[0]?.city}, ${filteredPlaces[0]?.country}`}</span>
+            </div>
+            <div className="guests">
+              <span>
+                {totalGuests < 1 ? 'Add Guest' :
+                  totalGuests === 1 ? `${totalGuests} guest` :
+                    `${totalGuests} guests`}
+              </span>
+            </div>
+            <div className="search">
+              <img src={searchIcon} alt="search icon" width={18} height={18} />
+            </div>
+          </SearchBtn>
         </HeaderInner>
       </Container>
     </StyledHeader>

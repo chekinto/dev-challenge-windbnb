@@ -1,17 +1,12 @@
 import styled from 'styled-components/macro';
 
-export const StyledSearchBar = styled.div`
+export const StyledSearchBar = styled.form`
   border-radius: 16px; 
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
   overflow: hidden;
   width: max-content;
   margin: 0 auto;
-  .dropdown__location, .dropdown__guest {
-    border-right: 1px solid var(--grey1);
-  }
-  &:focus {
-    border: 4px solid green;
-  }
+  z-index: 100;
 `;
 
 export const LocationWrapper = styled.div`
@@ -20,13 +15,21 @@ export const LocationWrapper = styled.div`
 
 export const LocationDropdownWrapper = styled.div`
   position: absolute;
-  margin-left: 24px;
   padding-top: 48px;  
-  li {
-    color: var(--grey3);
-    font-size: 14px;
-    line-height: 22px;
-    margin-bottom: 32px;
+`;
+
+export const LocationDropdown = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  cursor: pointer;
+  img {
+    margin-right: 10px;
+  } 
+  &:hover {
+    background-color: var(--grey1);
   }
 `;
 
