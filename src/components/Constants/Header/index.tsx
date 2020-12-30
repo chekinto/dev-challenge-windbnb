@@ -21,9 +21,7 @@ export const Header: FunctionComponent<IHeader> = ({ isFilterOpen, setIsFilterOp
     <StyledHeader>
       <Container>
         <HeaderInner>
-          <a href="#">
-            <img src={logo} alt="windbnb logo" />
-          </a>
+          <img src={logo} alt="windbnb logo" />
           <SearchBtn onClick={() => setIsFilterOpen(!isFilterOpen)}>
             <div className="location">
               <span>{`${filteredPlaces[0]?.city}, ${filteredPlaces[0]?.country}`}</span>
